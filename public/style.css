@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+}
+.loginbg{
+    top: 0;
+    background: url(asset/login.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+.flex{
+    display:flex;  
+}
+.flex h1{
+    flex: 1;
+    border-radius: 5px;
+}
+.login-box{
+    min-width: 300px;
+    max-width: 340px;
+    height: 400px;
+    background-color: rgba(255, 255, 255, 0.938);
+
+    border: 5px solid burlywood;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 30px;
+}
+.signin-box{
+    min-width: 300px;
+    max-width: 340px;
+    height: 620px;
+    background-color: rgba(255, 255, 255, 0.938);
+
+    border: 5px solid burlywood;
+    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    padding: 10px 30px;
+}
+.signup-button{
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.detail-box{
+    width: 700px;
+    background-color: rgb(206, 248, 248);
+}
+.forgot-box{
+    height: 550px;
+}
+.detail-box-font{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.index-forgot{
+    cursor: pointer;
+}
