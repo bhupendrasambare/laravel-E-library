@@ -9,10 +9,10 @@
         <div class="login-box">
         <h1 class="font-weight-bold text-center mt-2">Login</h1>
         @if (session('loginfail'))
-        <center> <h5 class="text-danger">Enter valid ID Password</h5>
+        <center> <h5 class="text-danger form-text">Enter valid ID Password</h5>
         </center>
         @endif
-        <form action="login" class="mt-3" method="POST">
+        <form action="logincheck" class="mt-3" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Enter your ID</label>

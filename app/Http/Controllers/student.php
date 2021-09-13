@@ -8,7 +8,12 @@ class student extends Controller
 {
     //
     function detail(){
-
+        if(session('librarylogin')){
+            $student = session('librarylogin');
+            return view('account',['account'=>$student]);
+        }else{
+            return redirect('login');
+        }
     }
     function due(){
 

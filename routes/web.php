@@ -17,11 +17,16 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [account::class,'main']);
 Route::view('login', 'login');
-Route::get('logincheck', [account::class,'login']);
-Route::get('signup', [account::class,'make']);
+
+Route::post('logincheck', [account::class,'login']);
+Route::post('signup', [account::class,'make']);
 Route::get('forgot', [account::class,'forgot']);
+Route::get('logout', [account::class,'logout']);
+
+
 Route::get('details', [student::class,'detail']);
 Route::get('due', [student::class,'due']);
 Route::get('bag', [student::class,'bag']);
+
 Route::view('edit', 'edit');
 Route::get('editdetails', [student::class,'edit']);
