@@ -65,7 +65,13 @@ class account extends Controller
         $data =  $req->input();
         if($data['name'] !=null && $data['last'] != null && $data['email'] !=null && $data['number'] != null){
             $details = Student::where('name',$data['name'])->where('last',$data['last'])->where('email',$data['email'])->where('number',strval($data['number']))->get();
+            if(count($details) <0){
+                return view('details',['massage'=>"account not found",'details'=>'no data']);
+            }
                 return view('details',['massage'=>"account found",'details'=>$details[0]]);
+        }
+        else{
+            return view('details',['massage'=>"account not found",'details'=>'no data']);
         }
     }
     function logout(){

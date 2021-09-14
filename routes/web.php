@@ -20,7 +20,7 @@ Route::view('login', 'login');
 
 Route::post('logincheck', [account::class,'login']);
 Route::post('signup', [account::class,'make']);
-Route::get('forgot', [account::class,'forgot']);
+Route::post('forgot', [account::class,'forgot']);
 Route::get('logout', [account::class,'logout']);
 
 
