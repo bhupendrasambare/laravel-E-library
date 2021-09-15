@@ -1,7 +1,6 @@
 <x-header data="E-library"/>
-@if (session('librarystudent')){
-    {{redirect('details')}}
-}
+@if (session('librarylogin'))
+    <script>window.location = "/details"</script>
     
 @endif
 <div class="loginbg">
@@ -20,7 +19,7 @@
             </div>
             <div class="form-group">
                 <label for="name">Enter Password</label>
-                <input type="text" required name="password" class="form-control" placeholder="Password hear">
+                <input type="password" required name="password" class="form-control" placeholder="Password hear">
                 <small class="form-text index-forgot text-muted"><span href="" class="text-primary " onclick="forgot()">Forgot password ?</span></small>
             </div>
             <button type="submit" class="mt-2 btn btn-dark btn-block">Login<i class="pl-2 fas fa-sign-in-alt"></i></button>

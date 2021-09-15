@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
+
 use Illuminate\Http\Request;
 
 class student extends Controller
@@ -10,7 +12,8 @@ class student extends Controller
     function detail(){
         if(session('librarylogin')){
             $student = session('librarylogin');
-            return view('account',['account'=>$student]);
+            $books = Book::all();
+            return view('account',['student'=>$student,'books'=>$books]);
         }else{
             return redirect('login');
         }

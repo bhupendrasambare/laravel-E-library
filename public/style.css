@@ -70,3 +70,26 @@ body{
 .index-forgot{
     cursor: pointer;
 }
+.navbar{
+    border-radius: 20px;
+}
+.accountafterlogin{
+    background-image: linear-gradient(rgb(152, 214, 255), rgb(255, 255, 255));
+}
+.details-screen{
+    min-height:400px;
+    border-radius: 20px;
+}
+.detail-account-details{
+    position: relative;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 300px;
+    height: 50px;
+    text-align: left;
+}
+th{
+    font-size: 1rem;
+}
