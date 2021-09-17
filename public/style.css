@@ -80,7 +80,7 @@ body{
     min-height:400px;
     border-radius: 20px;
 }
-.detail-account-details{
+/* .detail-account-details{
     position: relative;
     top: 0;
     bottom: 0;
@@ -89,7 +89,7 @@ body{
     width: 300px;
     height: 50px;
     text-align: left;
-}
+} */
 th{
     font-size: 1rem;
 }

@@ -39,12 +39,8 @@
                   </table>
             </div>
         </center>
+        {{$books}}
         
-        
-        {{-- {{count($books)}} <br>
-        @foreach ($books as $item)
-        {{$item['name']}} <br> --}}
-        {{-- @endforeach --}}
     </div>
 </div>
 
