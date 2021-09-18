@@ -1,5 +1,5 @@
 <nav class="container navbar navbar-expand-sm navbar-light ">
-    <a class="navbar-brand font-weight-bolder" href="#">Library</a>
+    <a class="navbar-brand font-weight-bolder" href="details">Library</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

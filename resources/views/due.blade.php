@@ -18,7 +18,7 @@
                     @foreach ($due as $item)
                     <tbody>
                         <tr>
-                          <th scope="row">1</th>
+                          <th scope="row">{{++$count}}</th>
                           <td>{{$item['book']}}</td>
                           <td>{{$item['returndate']}}</td>
                           <td>{{$item['due']}}</td>
@@ -35,3 +35,5 @@
         </center>
     </div>
 </div>
+
+<x-footer/>

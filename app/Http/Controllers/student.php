@@ -24,18 +24,21 @@ class student extends Controller
     function due(){
         if(session('librarylogin')){
             $student = session('librarylogin');
-            // $books = Book::all();
-            // $issue=0;
-            // $issue = count(issue::where('s_id',$student['s_id'])->get());
             $due = due::where('student',$student['s_id'])->get();
-            
-            return view('due',['due'=>$due]);
+
+            return view('due',['due'=>$due,'count'=>0]);
         }else{
             return redirect('login');
         }
     }
     function bag(){
-
+        if(session('librarylogin')){
+            $student = session('librarylogin');
+            $due = issue::where('s_id',$student['s_id'])->get();
+            return view('bag',['due'=>$due]);
+        }else{
+            return redirect('login');
+        }
     }
     function edit(Request $req){
         
