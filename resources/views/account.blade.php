@@ -17,11 +17,11 @@
                         <td>{{$student['s_id']}}</td>
                       </tr>
                       <tr>
-                        <th scope="row">Frist</th>
+                        <th scope="row">Frist name:</th>
                         <td>{{$student['name']}}</td>
                       </tr>
                       <tr>
-                        <th scope="row">Last</th>
+                        <th scope="row">Last name:</th>
                         <td>{{$student['last']}}</td>
                       </tr>
                       <tr>
@@ -29,8 +29,12 @@
                         <td>{{$student['email']}}</td>
                       </tr>
                       <tr>
-                        <th>Number</th>
+                        <th>Number:</th>
                         <td>{{$student['number']}}</td>
+                      </tr>
+                      <tr>
+                        <th>Currently Book issued</th>
+                        <td>{{$issue}}</td>
                       </tr>
                       <tr>
                         <th colspan="2"  scope="col" class="text-center"><a href="edit"><button class="btn btn-dark">Edit Details</button></a></th>
@@ -39,8 +43,6 @@
                   </table>
             </div>
         </center>
-        {{$books}}
-        
     </div>
 </div>
 
