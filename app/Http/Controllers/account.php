@@ -11,7 +11,11 @@ class account extends Controller
     function main(){
         if(session('librarylogin')){
             return redirect('details');
-        }else{
+        }
+        elseif(session('manager')){
+            redirect('library/main');
+        }
+        else{
             return redirect('login');
         }
     }

@@ -30,3 +30,4 @@ Route::get('bag', [student::class,'bag']);
 
 Route::view('edit', 'edit');
 Route::get('editdetails', [student::class,'edit']);
+// library
