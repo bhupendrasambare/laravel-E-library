@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
+use App\Models\manager;
 use Illuminate\Http\Request;
 
 class account extends Controller
@@ -13,7 +14,7 @@ class account extends Controller
             return redirect('details');
         }
         elseif(session('manager')){
-            redirect('library/main');
+            redirect('library/detail');
         }
         else{
             return redirect('login');
@@ -21,7 +22,13 @@ class account extends Controller
     }
     function login(Request $req){
         $data = $req->input();
+
+        // input check
+
         if($data['id'] != null && $data['password'] !=null){
+
+            // login type check
+
             if(substr($data['id'],0,1)== "S"){
                 $student = Student::where('s_id',substr($data['id'],1))->where('password',$data['password'])->get();
                 if(count($student) >0){
@@ -31,9 +38,18 @@ class account extends Controller
                 $req->session()->flash('loginfail',"fail");
             return redirect('login');
             }
+
             elseif(substr($data['id'],0,1)== "L"){
-                return "Libriran";
-            }else{
+                $manager = manager::where('id',substr($data['id'],1))->where('password',$data['password'])->get();
+                if(count($manager) >0){
+                    $req->session()->put('manager',$manager[0]);
+                    return redirect('library/detail');
+                }
+                $req->session()->flash('loginfail',"fail");
+                return redirect('login');
+            }
+            
+            else{
                 $req->session()->flash('loginfail',"fail");
             return redirect('login');
             }

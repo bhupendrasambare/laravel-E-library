@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\account;
 use App\Http\Controllers\student;
+use App\Http\Controllers\manager;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,5 @@ Route::get('bag', [student::class,'bag']);
 Route::view('edit', 'edit');
 Route::get('editdetails', [student::class,'edit']);
 // library
+
+Route::get('library/detail',[manager::class,'check']);
