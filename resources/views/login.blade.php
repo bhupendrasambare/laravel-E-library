@@ -1,4 +1,4 @@
-<x-header data="E-library"/>
+<x-header data="E-library Login"/>
 @if (session('librarylogin'))
     <script>window.location = "/details"</script>
     

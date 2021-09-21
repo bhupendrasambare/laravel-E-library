@@ -14,7 +14,7 @@ class account extends Controller
             return redirect('details');
         }
         elseif(session('manager')){
-            redirect('library/detail');
+            return redirect('library/detail');
         }
         else{
             return redirect('login');

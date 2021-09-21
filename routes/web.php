@@ -32,5 +32,17 @@ Route::get('bag', [student::class,'bag']);
 Route::view('edit', 'edit');
 Route::get('editdetails', [student::class,'edit']);
 // library
-
+Route::get('library',[manager::class,'redirect']);
 Route::get('library/detail',[manager::class,'check']);
+
+
+Route::get('library/student',[manager::class,'managerstudent']);
+
+
+Route::get('library/issue',[manager::class,'managerissue']);
+
+
+Route::get('library/book',[manager::class,'managerbook']);
+
+
+Route::get('library/add',[manager::class,'manageradd']);

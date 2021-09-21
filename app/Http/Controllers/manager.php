@@ -7,7 +7,19 @@ use Illuminate\Http\Request;
 class manager extends Controller
 {
     //
+    function redirect(){
+        if(!session('manager')){
+            return redirect('login');
+        }
+        return redirect('library/detail');
+    }
     function check(){
-        return session('manager');
+        if(!session('manager')){
+            return redirect('login');
+        }
+        return view('managerdetails',['data'=>session('manager')]);
+    }
+    function managerstudent(){
+        return "student";
     }
 }
