@@ -30,7 +30,9 @@ class manager extends Controller
             }else{
                 return redirect('library/student');
             }
-            $req->session()->flash('managerstudentissue',$issue);
+            if(count($issue) > 0){
+                $req->session()->flash('managerstudentissue',$issue);
+            } 
             return redirect('library/student');
         }
         return redirect('library/student');

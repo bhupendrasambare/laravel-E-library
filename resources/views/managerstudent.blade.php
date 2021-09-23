@@ -17,14 +17,59 @@
                 </div>
                 <button type="submit" class="btn btn-primary mb-2">Search Student</button>
               </form>
+
+
               @if (session('managerstudentsearch'))
-              {{session('managerstudentsearch')}}
+              <table class="table mt-5">
+                <thead class="thead-dark p-5">
+                        <tr>
+                          <th scope="col" class="text-center" colspan="2"> Your Account Information</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th>Id :</th>
+                          <td>{{session('managerstudentsearch')->s_id}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Frist name:</th>
+                          <td class="text-capitalize">{{session('managerstudentsearch')->name}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Last name:</th>
+                          <td class="text-capitalize">{{session('managerstudentsearch')->last}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">Email :</th>
+                          <td class="text-wrap">{{session('managerstudentsearch')->email}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
                   
               @else
-                  no data found
+                  <h4 class="p-5">no data found</h4>
               @endif
               @if (session('managerstudentissue'))
-                  {{session('managerstudentissue')}}
+              <table class="table mt-5">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Book Id</th>
+                    <th scope="col">Issue Date</th>
+                    <th scope="col">Return All</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    @foreach (session('managerstudentissue') as $item)    
+                    <tr>
+                      <th scope="row"><i class="fas fa-book"></i></th>
+                      <td>{{$item->b_id}}</td>
+                      <td>{{$item->issue_date}}</td>
+                      <td><a href="managerdelete?book={{$item->i_id}}"><button class="btn btn-dark">Return</button></a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+              </table>
               @else
                   
               @endif
