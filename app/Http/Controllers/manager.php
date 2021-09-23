@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\issue;
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class manager extends Controller
@@ -19,7 +21,20 @@ class manager extends Controller
         }
         return view('managerdetails',['data'=>session('manager')]);
     }
-    function managerstudent(){
-        return "student";
+    function studentsearch(Request $req){
+        if(session('manager')->password == $req['managerpass']){
+            $student = Student::where('s_id',$req->input('student'))->get();
+            $issue = issue::where('s_id',$req->input('student'))->get();
+            if(count($student) > 0){
+                $req->session()->flash('managerstudentsearch',$student[0]);
+            }else{
+                return redirect('library/student');
+            }
+            $req->session()->flash('managerstudentissue',$issue);
+            return redirect('library/student');
+        }
+        return redirect('library/student');
+        // return session('manager') . $req->input()['managerpass'];
+        // return $req->input()['student'];
     }
 }

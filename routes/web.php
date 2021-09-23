@@ -36,7 +36,8 @@ Route::get('library',[manager::class,'redirect']);
 Route::get('library/detail',[manager::class,'check']);
 
 
-Route::get('library/student',[manager::class,'managerstudent']);
+Route::view('library/student','managerstudent');
+Route::post('library/studentsearch',[manager::class,'studentsearch']);
 
 
 Route::get('library/issue',[manager::class,'managerissue']);
