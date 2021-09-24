@@ -56,7 +56,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Book Id</th>
                     <th scope="col">Issue Date</th>
-                    <th scope="col">Return All</th>
+                    <th scope="col"><a href="managerdeleteall?student={{session('managerstudentsearch')->s_id}}"><button class="btn btn-dark">Return All</button></a></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -65,7 +65,7 @@
                       <th scope="row"><i class="fas fa-book"></i></th>
                       <td>{{$item->b_id}}</td>
                       <td>{{$item->issue_date}}</td>
-                      <td><a href="managerdelete?book={{$item->i_id}}"><button class="btn btn-dark">Return</button></a></td>
+                      <td><a href="managerdelete?book={{$item->i_id}}&student={{session('managerstudentsearch')->s_id}}"><button class="btn btn-dark">Return</button></a></td>
                     </tr>
                     @endforeach
                 </tbody>

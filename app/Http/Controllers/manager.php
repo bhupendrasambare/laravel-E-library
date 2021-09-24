@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\issue;
 use App\Models\Student;
+use App\Models\Book;
 use Illuminate\Http\Request;
 
 class manager extends Controller
@@ -36,7 +37,24 @@ class manager extends Controller
             return redirect('library/student');
         }
         return redirect('library/student');
-        // return session('manager') . $req->input()['managerpass'];
-        // return $req->input()['student'];
+    }
+    function deleteissue(Request $req){
+        if(isset($req->input()['book'])){
+            $books = $req->input()['book'];
+            issue::where('i_id',$books)->delete();
+            Book::where('book_id',$books)->update(['issued'=>"false"]);
+            // return $book;
+            return "true";
+        }
+        return $req->input();
+    }
+    function deleteissueall(Request $req){
+        if(isset($req->input()['student'])){
+            $books = $req->input()['student'];
+            issue::where('s_id',$books)->delete();
+            Book::where('book_id',$books)->update(['issued'=>"false"]);
+            return "true";
+        }
+        return $req->input();
     }
 }

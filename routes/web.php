@@ -38,6 +38,8 @@ Route::get('library/detail',[manager::class,'check']);
 
 Route::view('library/student','managerstudent');
 Route::post('library/studentsearch',[manager::class,'studentsearch']);
+Route::get('library/managerdelete',[manager::class,'deleteissue']);
+Route::get('library/managerdeleteall',[manager::class,'deleteissueall']);
 
 
 Route::get('library/issue',[manager::class,'managerissue']);
