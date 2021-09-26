@@ -93,3 +93,6 @@ body{
 th{
     font-size: 1rem;
 }
+.bg-light-green{
+    background-color: rgb(134, 240, 134);
+}

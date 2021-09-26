@@ -43,18 +43,21 @@ class manager extends Controller
             $books = $req->input()['book'];
             issue::where('i_id',$books)->delete();
             Book::where('book_id',$books)->update(['issued'=>"false"]);
-            // return $book;
-            return "true";
+            session()->flash('managerbookdelete',"One");
+            return redirect('library/student');
         }
-        return $req->input();
+        session()->flash('managerbookdelete',"No");
+            return redirect('library/student');
     }
     function deleteissueall(Request $req){
         if(isset($req->input()['student'])){
             $books = $req->input()['student'];
             issue::where('s_id',$books)->delete();
             Book::where('book_id',$books)->update(['issued'=>"false"]);
-            return "true";
+            session()->flash('managerbookdelete',"All");
+            return redirect('library/student');
         }
-        return $req->input();
+        session()->flash('managerbookdelete',"No");
+            return redirect('library/student');
     }
 }

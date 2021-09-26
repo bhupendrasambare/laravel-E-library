@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\account;
+use App\Http\Controllers\books;
 use App\Http\Controllers\student;
 use App\Http\Controllers\manager;
 use Illuminate\Support\Facades\Route;
@@ -42,7 +43,7 @@ Route::get('library/managerdelete',[manager::class,'deleteissue']);
 Route::get('library/managerdeleteall',[manager::class,'deleteissueall']);
 
 
-Route::get('library/issue',[manager::class,'managerissue']);
+Route::view('library/issue','bookissue');
 
 
 Route::get('library/book',[manager::class,'managerbook']);
