@@ -44,6 +44,7 @@ Route::get('library/managerdeleteall',[manager::class,'deleteissueall']);
 
 
 Route::view('library/issue','bookissue');
+Route::get('library/issuebook',[books::class,'issuebook']);
 
 
 Route::get('library/book',[manager::class,'managerbook']);

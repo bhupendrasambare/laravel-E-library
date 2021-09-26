@@ -26,7 +26,9 @@
                   </table>
                     
                 @else
-                    <h1 class="container text-center">No Book Issued</h1>
+                <div class="alert alert-info" role="alert">
+                  <h1 class="container text-center">No Book Issued</h1>
+                </div>
                 @endif
             </div>
         </center>

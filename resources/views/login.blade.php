@@ -8,7 +8,10 @@
         <div class="login-box">
         <h1 class="font-weight-bold text-center mt-2">Login</h1>
         @if (session('loginfail'))
-        <center> <h5 class="text-danger form-text">Enter valid ID Password</h5>
+        <center>
+            <div class="alert alert-danger" role="alert">
+                <h5 class="form-text">Enter valid ID Password</h5>
+              </div>
         </center>
         @endif
         <form action="logincheck" class="mt-3" method="POST">

@@ -27,9 +27,11 @@
                     </tbody>
                   </table>
                 @else
-                <h1 class="container text-center">
-                    No Due Submitted
-                </h1>
+                <div class="alert alert-warning" role="alert">
+                  <h1 class="container text-center">
+                      No Due Submitted
+                  </h1>
+                </div>
                 @endif
             </div>
         </center>

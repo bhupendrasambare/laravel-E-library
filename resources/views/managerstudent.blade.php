@@ -47,10 +47,14 @@
                     </table>
                   
               @else
-                  <h4 class="p-5">no data found</h4>
+              <div class="alert alert-primary" role="alert">
+                No Data Found
+              </div>
               @endif
               @if (session('managerbookdelete'))
-              <h3 class="bg-light-green rounded-pill text-center">{{session('managerbookdelete')}} Book Deletion Success</h3>
+              <div class="alert alert-danger" role="alert">
+                <h3 class="text-center">{{session('managerbookdelete')}} Book Deletion Success</h3>
+              </div>
               @endif
               @if (session('managerstudentissue'))
               <table class="table mt-5">
@@ -75,7 +79,9 @@
               </table>
               @else
               @if (session('managerstudentsearch'))
-              <h3 class="bg-warning rounded-pill text-center m-5 p-1">No Book Issued</h3>
+              <div class="alert alert-danger" role="alert">
+                <h3 class="text-center m-5 p-1">No Book Issued</h3>
+              </div>
               @endif
               @endif
         </div>
