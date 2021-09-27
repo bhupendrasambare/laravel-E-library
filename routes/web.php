@@ -46,8 +46,11 @@ Route::get('library/managerdeleteall',[manager::class,'deleteissueall']);
 Route::view('library/issue','bookissue');
 Route::get('library/issuebook',[books::class,'issuebook']);
 
+Route::view('library/book','managerbook');
+Route::get('library/booksearch',[books::class,'booksearch']);
 
-Route::get('library/book',[manager::class,'managerbook']);
+
+Route::get('library/add',[books::class,'manageradd']);
 
 
-Route::get('library/add',[manager::class,'manageradd']);
+Route::get('library/manager/logout',[manager::class,'managerlogout']);

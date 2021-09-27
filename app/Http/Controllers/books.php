@@ -52,4 +52,29 @@ class books extends Controller
             return redirect('library/issue');
         }
     }
+    function booksearch(Request $req){
+        $data = $req->input();
+        if($data['managerpass'] == session('manager')->password){
+            if($data['name'] || $data['subject'] || $data['department'])
+            {
+                $books = Book::where('name',$data['name'])->orWhere('department', $data['department'])->orWhere('subject',$data['subject'])->get();
+                if(count($books) >0){
+                    session()->flash('bookfound',$books);
+                return redirect('library/book');
+                }
+                session()->flash('passfail',"No data found");
+                return redirect('library/book');
+            }
+            else
+            {
+                session()->flash('passfail',"Atleast One entry required");
+                return redirect('library/book');
+            }
+        }
+        else
+        {
+            session()->flash('passfail',"Wrong manager password");
+            return redirect('library/book');
+        }
+    }
 }
