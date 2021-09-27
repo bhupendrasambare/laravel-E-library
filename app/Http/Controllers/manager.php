@@ -63,4 +63,8 @@ class manager extends Controller
         session()->flash('managerbookdelete',"No");
             return redirect('library/student');
     }
+    function managerlogout(){
+        session()->forget('manager');
+        return redirect('/');
+    }
 }

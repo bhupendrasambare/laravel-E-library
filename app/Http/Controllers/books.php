@@ -77,4 +77,34 @@ class books extends Controller
             return redirect('library/book');
         }
     }
+    function addbook(Request $req){
+        $data = $req->input();
+        if($data['password'] == session('manager')->password)
+        {
+            if($data['name'] && $data['author'] && $data['department'] && $data['subject'] && $data['year'] && $data['location'])
+            {
+                $book = new Book;
+                $book->name = $data['name'];
+                $book->author = $data['author'];
+                $book->department =  $data['department'];
+                $book->subject =  $data['subject'];
+                $book->year =  $data['year'];
+                $book->issued =  "false";
+                $book->location =  $data['location'];
+                $book->save();
+                session()->flash('bookaddsuccess',$data['name']." Added to ".$data['location']);
+                return redirect('library/add');
+            }
+            else
+            {
+                session()->flash('bookaddfail',"Insufficient data");
+                return redirect('library/add');
+            }
+        }
+        else
+        {
+            session()->flash('bookaddfail',"Password Incorrect");
+            return redirect('library/add');
+        }
+    }
 }

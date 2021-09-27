@@ -49,8 +49,8 @@ Route::get('library/issuebook',[books::class,'issuebook']);
 Route::view('library/book','managerbook');
 Route::get('library/booksearch',[books::class,'booksearch']);
 
-
-Route::get('library/add',[books::class,'manageradd']);
+Route::view('library/add','manageraddbook');
+Route::get('library/addbook',[books::class,'addbook']);
 
 
 Route::get('library/manager/logout',[manager::class,'managerlogout']);
