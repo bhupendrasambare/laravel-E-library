@@ -72,7 +72,7 @@
                       <th scope="row"><i class="fas fa-book"></i></th>
                       <td>{{$item->b_id}}</td>
                       <td>{{$item->issue_date}}</td>
-                      <td><a href="managerdelete?book={{$item->i_id}}&student={{session('managerstudentsearch')->s_id}}"><button class="btn btn-dark">Return</button></a></td>
+                      <td><a href="managerdelete?book={{$item->b_id}}&student={{session('managerstudentsearch')->s_id}}"><button class="btn btn-dark">Return</button></a></td>
                     </tr>
                     @endforeach
                 </tbody>

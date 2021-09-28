@@ -41,7 +41,7 @@ class manager extends Controller
     function deleteissue(Request $req){
         if(isset($req->input()['book'])){
             $books = $req->input()['book'];
-            issue::where('i_id',$books)->delete();
+            issue::where('b_id',$books)->delete();
             Book::where('book_id',$books)->update(['issued'=>"false"]);
             session()->flash('managerbookdelete',"One");
             return redirect('library/student');

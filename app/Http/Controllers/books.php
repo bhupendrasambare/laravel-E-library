@@ -12,12 +12,15 @@ class books extends Controller
     //
     function issuebook(Request $req){
         $data =$req->input();
-        if($data['student'] && $data['bookid'] && $data['managerpass']){
-            if($data['managerpass'] != session('manager')->password){
+        if($data['student'] && $data['bookid'] && $data['managerpass'])
+        {
+            if($data['managerpass'] != session('manager')->password)
+            {
                 session()->flash('bookissuefail',"Password Invalid");
                 return redirect('library/issue');
             }
-            else{
+            else
+            {
             $student = Student::where('s_id',$data['student'])->get();
             $book = Book::where('book_id',$data['bookid'])->get();
             if(count($student) >0 && count($book) > 0)

@@ -47,12 +47,12 @@
           <td>{{$item['name']}}</td>
           <td>{{$item['author']}}</td>
           <td>{{$item['department']}}</td>
+          <td>{{$item['subject']}}</td>
           @if ($item['issued'] == "false")
           <td>Not Issued</td>    
           @else
           <td>Issued</td>
           @endif
-          <td>{{$item['subject']}}</td>
           <td>{{$item['location']}}</td>
         </tr>
         @endforeach
